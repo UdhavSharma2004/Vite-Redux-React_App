@@ -1,0 +1,97 @@
+/* create this individual product so much interactive as well as fancy modernly */
+
+/* make this page so responsive */
+
+.product-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.9);
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.image-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+
+}
+
+.image-main{
+    width: 200px;
+    object-fit: contain;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.9);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+
+}
+
+.product-info-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.9);
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.product-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
+
+.product-description{
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
+.product-price{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ff0000;
+
+
+}
+
+.product-category{
+    /* create a button like box with cool background color and transitions to make it visible to user*/
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0000ff;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.product-category:hover{
+    background-color: #0000ff;
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    transition: all 0.3s ease-in-out;
+
+}

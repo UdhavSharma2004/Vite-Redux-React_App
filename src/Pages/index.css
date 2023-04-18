@@ -1,0 +1,245 @@
+.main{
+    padding:2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.errorPage{
+    /* background-color: #f5f5f5; */
+    height: 100vh;
+    display: flex;
+    margin-top:10vh;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.GobackBtn{
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.GobackBtn:hover{
+    background-color: #000;
+    color: #fff;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.reset-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(255, 0, 0, 0.932);
+}
+
+.reset-button:hover{
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    color: black;
+    background-color: rgba(255, 0, 0, 0.521);
+}
+
+.search-input{
+    width: calc(min(80vw, 1000px));
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color)
+}
+
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    /* flex-direction: column; */
+}
+
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 300px;
+    /* height: 300px; */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.product:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+}
+
+.product-image{
+    width: 200px;
+    object-fit: contain;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.9);
+}
+
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    /* border-bottom: solid 1px black; */
+}
+
+.info-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-bottom: solid 1px black;
+
+}
+
+.info-price{
+    font-size: 1rem;
+    font-weight: 800;
+    margin-top: 5px;
+    border-bottom: solid 1px black;
+}
+
+.price{
+    color: #ff0000;
+}
+
+.info-description{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 5px;
+    
+}
+
+.product-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+}
+
+.product-button:hover{
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    color:black;
+    background-color: rgba(0, 0, 0, 0.151);
+}
+
+.cart-addition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(52, 52, 255, 0.932);
+}
+
+.cart-addition:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    color: black;
+    background-color: rgba(52, 52, 255, 0.521);
+}
+
+.remove-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(255, 0, 0, 0.932);
+}
+
+.remove-cart:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    color: black;
+    background-color: rgba(255, 0, 0, 0.521);
+}
+
+.more-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.center-large-font{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.footer-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.151);
+    font-size:var(--heading-size);
+    font-weight: 600;
+}
+
+.PayNow-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    color: black;
+    font-size:var(--heading-size);
+    font-weight: 600;
+}
+
+
+.PayNow-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgba(52, 52, 255, 0.932);
+}
+
+.PayNow-btn:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    color: black;
+    background-color: rgba(52, 52, 255, 0.521);
+}
+
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.2rem;
+    width:50px;
+    background-color: #fff;
+    initial-value: 1;
+    color:black;
+}
