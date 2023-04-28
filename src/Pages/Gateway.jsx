@@ -1,51 +1,120 @@
-import { React ,useState} from 'react'
+import { React, useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeProduct } from '../Store/cartSlice'
+import './index.css';
 
 const Gateway = () => {
     const items = useSelector((state) => state.cart)
-    console.log(items)
-    const dispatch = useDispatch()
-    const handleRemove = (product) => {
-        dispatch(removeProduct(product))
+
+    // create an object to store the quantity of each product
+
+    const [quantity, setQuantity] = useState({})
+    const [totalBill, setTotalBill] = useState(0)
+    const [showbill, setShowBill] = useState(false)
+    const [payment, setPayment] = useState(false)
+
+    // create a function to handle the quantity of each product
+
+    useEffect(() => {
+        let temp = {}
+        items.map((item) => {
+            temp[item.id] = 1
+        })
+        setQuantity(temp)
+    }, [items])
+
+    const handleQuantity = (e, id) => {
+        let temp = { ...quantity }
+        temp[id] = e.target.value
+        setQuantity(temp)
     }
 
-    let initotalBill = items.reduce((acc, item) => acc + item.price, 0);
-    initotalBill = initotalBill.toFixed(3);
-
-    const [totalBill, setTotalBill] = useState(parseFloat(initotalBill))
-    
-    const handleQuantity = (quantity, price) => {
-        quantity = parseInt(quantity)
-        price = parseFloat(price)
-        return (quantity * price)
+    const handleGenerateBill = () => {
+        setShowBill(true)
+        let total = 0;
+        console.log(quantity)
+        items.map((item) => {
+            console.log(item.price, quantity[item.id])
+            total += item.price * quantity[item.id]
+        })
+        total = total.toFixed(3)
+        console.log(total)
+        setTotalBill(total)
     }
+
+    const handlePayNow = () => {
+        setPayment(true)
+        items.map((item) => {
+            dispatch(removeProduct(item.id))
+        })
+
+    }
+
+    if (payment) {
+        return (
+            <lottie-player
+                src="https://assets5.lottiefiles.com/packages/lf20_yedpxhln.json"
+                mode="bounce"
+                background="transparent"
+                speed={1}
+                style={{ width: 500, height: 500 }}
+                loop=""
+                controls=""
+                autoPlay=""
+            />
+
+        )
+    }
+
     return (
         <div className=''>
             <h2 className='products'>Selected Products</h2>
-            <div className="selected-products products">
-                {items.map((item) => (
-                    <div className="product" key={item.id}>
-                        <div className="product-details products">
-                            <img src={item.image} alt={item.title} width={"200px"}/>
-                            <h3>{item.title}</h3>
-                            <p className='product-price'>Price: {item.price} $</p>
+            <h3 className='products'>You have selected following products, now select the number of items you want to purchase </h3>
+            <div className="products black-font">
+                {items.map((product) => (
+                    <div className="product" key={product.id}>
+                        <img src={product.image} alt={product.title} className='product-image' />
+                        <div className="product-info">
+                            <p className="info-title heading">{product.title}</p>
+                            <p className="info-price heading">Price - <span className='price'>{product.price} $</span></p>
                         </div>
-                        <button className='remove-cart' onClick={() => {
-                            handleRemove(item)
-                        }}>Cancel</button>
-                        <label htmlFor="quantity">
-                            Quantity:
-                            <input type="number" className='quantity' name="quantity" onChange={() => {
-                                let total = handleQuantity(event.target.value, item.price)
-                                setTotalBill(total)
-                            }} defaultValue={1}/>
-                        </label>
+                        <div className="quantity">
+                            <label htmlFor="quantity">Quantity</label>
+                            {!showbill ? (
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    name="quantity"
+                                    min="0"
+                                    defaultValue={1}
+                                    className='quantity'
+                                    onChange={(e) => { handleQuantity(e, product.id) }}
+                                />
+                            ) : (
+                                <div>
+                                    <p className='quantity'>{quantity[product.id]||1}</p>
+                                </div>
+                            )}
+
+                        </div>
                     </div>
                 ))}
-                <div>
-                    <h3 className='total'>Total Bill: {totalBill.toFixed(3)} $</h3>
-                </div>   
+            </div>
+            <div className='PayNow-box'>
+                {!showbill ? (
+                    <button className='PayNow-btn' onClick={() => { handleGenerateBill() }}>Generate Bill</button>
+                ) : (
+                    <div className=''>
+                        <div className='totalBill'>
+                            <h3 className='totalBill-heading products'>Total Bill</h3>
+                            <h3 className='totalBill-price products'>{totalBill} $</h3>
+                        </div>
+                        <div className='products'>
+                            <button className='PayNow-btn' onClick={() => { handlePayNow() }}>Pay Now $ {totalBill}</button>
+                        </div>
+                    </div>
+                )}
+
             </div>
         </div>
     )

@@ -27,7 +27,7 @@ const Home = () => {
     setproducts(data);
   }, []);
 
-  
+
   const handleAdd = (product) => {
     dispatch(addProduct(product))
     setproducts(products.filter((item) => item.id !== product.id))
@@ -63,7 +63,7 @@ const Home = () => {
     return (
       <div className='errorPage'>
         <p className='heading'>
-          There are no new products to show .. 
+          There are no new products to show ..
         </p>
       </div>
     )

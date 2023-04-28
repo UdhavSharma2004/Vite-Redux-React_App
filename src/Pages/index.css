@@ -71,6 +71,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    padding: 10px;
     /* flex-direction: column; */
 }
 
@@ -236,10 +237,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    font-size: 1.2rem;
+    margin:0 10px 0 10px;
+    font-size: 1rem;
     width:50px;
     background-color: #fff;
     initial-value: 1;
     color:black;
+}
+
+.totalBill-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.151);
+}
+
+.totalBill-price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.151);
+    color: #ff0000;
 }
