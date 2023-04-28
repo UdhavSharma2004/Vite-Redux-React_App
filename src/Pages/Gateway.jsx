@@ -1,6 +1,7 @@
 import { React, useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { removeProduct } from '../Store/cartSlice'
+import { Link } from 'react-router-dom'
 import './index.css';
 
 const Gateway = () => {
@@ -43,10 +44,6 @@ const Gateway = () => {
     }
 
     const handlePayNow = () => {
-        setPayment(true)
-        items.map((item) => {
-            dispatch(removeProduct(item.id))
-        })
 
     }
 
@@ -109,9 +106,9 @@ const Gateway = () => {
                             <h3 className='totalBill-heading products'>Total Bill</h3>
                             <h3 className='totalBill-price products'>{totalBill} $</h3>
                         </div>
-                        <div className='products'>
+                            <Link to="/thanks" className='products'>
                             <button className='PayNow-btn' onClick={() => { handlePayNow() }}>Pay Now $ {totalBill}</button>
-                        </div>
+                        </Link>
                     </div>
                 )}
 

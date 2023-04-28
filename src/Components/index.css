@@ -20,7 +20,8 @@
 
 
 .nav-links li{
-    padding: 0 10px;
+    margin: 0 10px;
+    
 }
 
 .link-main{
@@ -32,4 +33,32 @@
 
 .link-main:hover{
     color: #f5f5f5;
+}
+
+@media(max-width: 768px){
+    .nav{
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .nav-links{
+        margin-top: 20px;
+    }
+    .link-main{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px){
+    .nav{
+        padding: 10px;
+    }
+    .link-main{
+        font-size: 1.2rem;
+    }
 }

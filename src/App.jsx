@@ -9,6 +9,7 @@ import Navbar from './Components/Navbar';
 import store from './Store/store';
 import Product from './Pages/Product';
 import Gateway from './Pages/Gateway';
+import Thanks from './Pages/Thanks';
 
 import { Provider } from 'react-redux';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/checkout" element={<Gateway />} />
+          <Route path="/thanks" element={<Thanks />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>

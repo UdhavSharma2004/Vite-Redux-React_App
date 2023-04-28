@@ -17,7 +17,7 @@ const Navbar = () => {
                             <Link to="/" className='home body link-main'>Home</Link>
                         </li>
                         <li>
-                            <Link to="/cart" className='cart body link-main'>Cart-Items = {items.length}</Link>
+                            <Link to="/cart" className='cart body link-main'>Cart-{items.length}</Link>
                         </li>
                     </ul>
                 </div>
