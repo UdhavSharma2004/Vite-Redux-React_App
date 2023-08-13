@@ -19,16 +19,6 @@ const cartSlice = createSlice({
     }
 })
 
-// add createSlice thunk actions here in order to fetch data from the server
-
-const fetchProducts = createAsyncThunk(
-    'cart/fetchProducts',
-    async () => {
-        const response = await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        return data;
-    }
-)
 
 export const { addProduct, removeProduct } = cartSlice.actions
 
