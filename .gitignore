@@ -21,3 +21,5 @@ Readme.md
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
